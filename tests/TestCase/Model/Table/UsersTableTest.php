@@ -60,6 +60,7 @@ class UsersTableTest extends TestCase
     {
         $user = $this->Users->get(1);
         $this->assertSame('Lorem ipsum dolor sit amet', $user->email);
+        // test
     }
 
     /**
