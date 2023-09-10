@@ -76,7 +76,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT'),
+        'salt' => env('SECURITY_SALT', 'dfc123c6c22d84f4bc12273f3df67c6ae55009696e4126b36ac2f755778faccc'),
     ],
 
     /*
@@ -274,6 +274,11 @@ return [
         'default' => [
             'className' => Connection::class,
             'driver' => Mysql::class,
+            'host' => 'localhost',
+            'username' => 't_nishimura',
+            'password' => 't_nishimura',
+            'database' => 'cake_cms',
+            'encoding' => 'utf8mb4',
             'persistent' => false,
             'timezone' => 'UTC',
 
@@ -317,6 +322,11 @@ return [
         'test' => [
             'className' => Connection::class,
             'driver' => Mysql::class,
+            'host' => 'localhost',
+            'username' => 't_nishimura',
+            'password' => 't_nishimura',
+            'database' => 'test_cake_cms',
+            'encoding' => 'utf8mb4',
             'persistent' => false,
             'timezone' => 'UTC',
             //'encoding' => 'utf8mb4',

@@ -35,8 +35,8 @@ use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Core\Configure\Engine\PhpConfig;
 use Cake\Datasource\ConnectionManager;
-use Cake\Error\ErrorTrap;
-use Cake\Error\ExceptionTrap;
+// use Cake\Error\ErrorTrap;
+// use Cake\Error\ExceptionTrap;
 use Cake\Http\ServerRequest;
 use Cake\Log\Log;
 use Cake\Mailer\Mailer;
@@ -120,8 +120,8 @@ ini_set('intl.default_locale', Configure::read('App.defaultLocale'));
 /*
  * Register application error and exception handlers.
  */
-(new ErrorTrap())->register();
-(new ExceptionTrap())->register();
+// (new ErrorTrap())->register();
+// (new ExceptionTrap())->register();
 
 /*
  * Include the CLI bootstrap overrides.

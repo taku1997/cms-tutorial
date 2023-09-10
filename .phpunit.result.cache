@@ -1,0 +1,1 @@
+{"version":1,"defects":{"App\\Test\\TestCase\\Model\\Table\\UsersTableTest::testValidationDefault":4,"App\\Test\\TestCase\\Model\\Table\\UsersTableTest::testBuildRules":2},"times":{"App\\Test\\TestCase\\Model\\Table\\UsersTableTest::testValidationDefault":0.037,"App\\Test\\TestCase\\Model\\Table\\UsersTableTest::testBuildRules":0.001}}

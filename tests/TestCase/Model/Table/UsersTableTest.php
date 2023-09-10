@@ -25,7 +25,6 @@ class UsersTableTest extends TestCase
      */
     protected $fixtures = [
         'app.Users',
-        'app.Articles',
     ];
 
     /**
@@ -59,7 +58,8 @@ class UsersTableTest extends TestCase
      */
     public function testValidationDefault(): void
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $user = $this->Users->get(1);
+        $this->assertSame('Lorem ipsum dolor sit amet', $user->email);
     }
 
     /**
