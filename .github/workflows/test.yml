@@ -18,6 +18,7 @@ jobs:
           MYSQL_DATABASE: test_cake_cms
           MYSQL_USER: t_nishimura
           MYSQL_PASSWORD: t_nishimura
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
         options: >-
           --health-cmd "mysqladmin ping"
           --health-interval 10s
