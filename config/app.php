@@ -326,6 +326,7 @@ return [
             'username' => 't_nishimura',
             'password' => 'unext-ok',
             'database' => 'test_cake_cms',
+            'port' => '3306',
             'encoding' => 'utf8mb4',
             'persistent' => false,
             'timezone' => 'UTC',
