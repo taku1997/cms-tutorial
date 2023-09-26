@@ -18,7 +18,6 @@ jobs:
           MYSQL_DATABASE: test_cake_cms
           MYSQL_USER: t_nishimura
           MYSQL_PASSWORD: t_nishimura
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
         options: >-
           --health-cmd "mysqladmin ping"
           --health-interval 10s
@@ -34,6 +33,12 @@ jobs:
 
     - name: Show databases for t_nishimura
       run: mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -pt_nishimura -e "SHOW DATABASES"
+
+    - name: Show tabels for t_nishimura
+      run: |
+        mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -pt_nishimura
+        USE test_cake_cms
+        SHOW DATABASES
 
     - name: Checkout
       uses: actions/checkout@v3
