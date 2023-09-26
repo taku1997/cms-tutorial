@@ -29,7 +29,9 @@ jobs:
       run: docker ps -a
 
     - name: Show databases for t_nishimura
-      run: mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -punext-ok -e "SHOW DATABASES"
+      run: |
+        mysql --protocol=tcp -h localhost -P 3306 -u root -pqsgazwgrs -e "select user, host from mysql.user;"
+        mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -punext-ok -e "SHOW DATABASES"
 
     - name: Checkout
       uses: actions/checkout@v3
