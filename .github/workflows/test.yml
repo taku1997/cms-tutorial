@@ -14,7 +14,7 @@ jobs:
         ports:
           - 3306:3306
         env:
-          MYSQL_ROOT_PASSWORD: root_password
+          MYSQL_ROOT_PASSWORD: t_nishimura
           MYSQL_DATABASE: test_cake_cms
           MYSQL_USER: t_nishimura
           MYSQL_PASSWORD: t_nishimura
