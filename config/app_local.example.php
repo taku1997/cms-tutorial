@@ -324,7 +324,7 @@ return [
             'driver' => Mysql::class,
             'host' => 'localhost',
             'username' => 't_nishimura',
-            'password' => 't_nishimura',
+            'password' => 'unext-ok',
             'database' => 'test_cake_cms',
             'encoding' => 'utf8mb4',
             'persistent' => false,

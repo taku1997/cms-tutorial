@@ -14,10 +14,10 @@ jobs:
         ports:
           - 3306:3306
         env:
-          MYSQL_ROOT_PASSWORD: t_nishimura
+          MYSQL_ROOT_PASSWORD: qsgazwgrs
           MYSQL_DATABASE: test_cake_cms
           MYSQL_USER: t_nishimura
-          MYSQL_PASSWORD: t_nishimura
+          MYSQL_PASSWORD: unext-ok
         options: >-
           --health-cmd "mysqladmin ping"
           --health-interval 10s
@@ -28,15 +28,8 @@ jobs:
     - name: Show Docker containers
       run: docker ps -a
 
-    - name: Show databases for root user
-      run: mysql --protocol=tcp -h localhost -P 3306 -u root -pt_nishimura -e "SHOW DATABASES"
-
     - name: Show databases for t_nishimura
-      run: mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -pt_nishimura -e "SHOW DATABASES"
-
-    - name: Show tabels for t_nishimura
-      run: |
-        mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -pt_nishimura -e "USE test_cake_cms"
+      run: mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -punext-ok -e "SHOW DATABASES"
 
     - name: Checkout
       uses: actions/checkout@v3
