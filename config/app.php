@@ -323,7 +323,7 @@ return [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'host' => '%',
-            'username' => 't_nishimura',
+            'username' => 'ura',
             'password' => 'unext-ok',
             'database' => 'test_cake_cms',
             'port' => '3306',
