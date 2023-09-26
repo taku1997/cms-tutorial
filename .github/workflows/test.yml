@@ -50,4 +50,5 @@ jobs:
     - name: Run test suite
       run: |
         sudo /etc/init.d/mysql start
+        mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -punext-ok -e "select user, host from mysql.user;"
         ./vendor/bin/phpunit tests/TestCase/Model/Table/UsersTableTest.php 
