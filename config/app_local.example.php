@@ -322,10 +322,11 @@ return [
         'test' => [
             'className' => Connection::class,
             'driver' => Mysql::class,
-            'host' => 'localhost',
+            'host' => '%',
             'username' => 't_nishimura',
             'password' => 'unext-ok',
             'database' => 'test_cake_cms',
+            // 'port' => '3306',
             'encoding' => 'utf8mb4',
             'persistent' => false,
             'timezone' => 'UTC',
