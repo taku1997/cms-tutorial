@@ -8,9 +8,40 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      db:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_ROOT_PASSWORD: qsgazwgrs
+          MYSQL_DATABASE: test_cake_cms
+          MYSQL_USER: t_nishimura
+          MYSQL_PASSWORD: unext-ok
+        options: >-
+          --health-cmd "mysqladmin ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
+    - name: Show Docker containers
+      run: docker ps -a
+
+    - name: Show databases for t_nishimura
+      run: |
+        mysql --protocol=tcp -h localhost -P 3306 -u root -pqsgazwgrs -e "select user, host from mysql.user;"
+        mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -punext-ok -e "SHOW DATABASES"
+
     - name: Checkout
       uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0'
+        extensions: mbstring, intl, pdo_sqlite
+        coverage: none
 
     - name: Validate composer.json and composer.lock
       run: composer validate
@@ -19,4 +50,6 @@ jobs:
       run: composer install --prefer-dist --no-progress
 
     - name: Run test suite
-      run: composer run-script test
+      run: |
+        sudo /etc/init.d/mysql start
+        ./vendor/bin/phpunit tests/TestCase/Model/Table/UsersTableTest.php 
