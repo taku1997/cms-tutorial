@@ -322,7 +322,7 @@ return [
         'test' => [
             'className' => Connection::class,
             'driver' => Mysql::class,
-            'host' => 'localhost',
+            'host' => '0.0.0.0',
             'username' => 't_nishimura',
             'password' => 'unext-ok',
             'database' => 'test_cake_cms',
