@@ -36,9 +36,7 @@ jobs:
 
     - name: Show tabels for t_nishimura
       run: |
-        mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -pt_nishimura
-        USE test_cake_cms
-        SHOW DATABASES
+        mysql --protocol=tcp -h localhost -P 3306 -u t_nishimura -pt_nishimura -e "USE test_cake_cms"
 
     - name: Checkout
       uses: actions/checkout@v3
